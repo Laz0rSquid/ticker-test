@@ -1,10 +1,13 @@
 import React, { Component } from 'react';
 import '../css/App.css';
+import '../css/index.css';
+import '../css/bootstrap.css';
+import '../css/bootstrap-theme.css';
 
 class App extends Component {
   constructor(props) {
     super(props);
-    this.state = { seconds: 0, fruits: { id: 0, value: 'avocado'} };
+    this.state = { seconds: 0, fruits: {} };
   }
 
   tick() {
@@ -25,10 +28,14 @@ class App extends Component {
     clearInterval(this.interval);
   }
 
-  render() {
+render() {
     return (
-      <div className="component-wrapper">
-        <FruitList fruits={this.state.fruits} />
+      <div className="container">
+        <Col md={8} offset={{ md: 2 }}>
+          <Table>
+            <FruitList fruits={this.state.fruits} />
+          </Table>
+        </Col>
       </div>
     );
   }
@@ -37,17 +44,18 @@ class App extends Component {
 class FruitList extends React.Component {
   render() {
     return (
-      <div className="container">
-        <ul className="list-group text-center">
-          {Object.entries(this.props.fruits).map(
-            ([key,value]) => {
-              return (
-                <li>{key} : {value}</li>
-              );
-            },
-          )}
-        </ul>
-      </div>
+      <tbody>
+        {Object.entries(this.props.fruits)
+          .reverse()
+          .map(([key, value]) => {
+            return (
+              <tr>
+                <td>{key}</td>
+                <td>{value}</td>
+              </tr>
+            );
+          })}
+      </tbody>
     );
   }
 }

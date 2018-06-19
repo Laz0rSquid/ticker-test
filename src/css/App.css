@@ -26,3 +26,23 @@
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
+
+/* restore border to dynamically added elements */
+tbody tr td {
+  border: 1px solid #222;
+}
+
+/* striped elements for dynamic lists */
+
+tbody tr:nth-child(odd) {
+  background-color: #ccc;
+}
+
+tbody tr:nth-child(even) {
+  background-color: #fff;
+}
+
+/* highlight first list element */
+tbody tr:first-child {
+  background-color: #f0f;
+}
