@@ -4,9 +4,7 @@ import '../css/index.css';
 import '../css/bootstrap.css';
 import '../css/bootstrap-theme.css';
 
-// https://github.com/drcmda/react-spring/blob/master/API-OVERVIEW.md
-import { Transition } from 'react-spring';
-import { Table, Col } from 'react-bootstrap';
+import FruitList from './FruitList';
 
 class App extends Component {
   constructor(props) {
@@ -19,11 +17,10 @@ class App extends Component {
     const secondPassed = this.state.seconds + 1;
     // array.unshift(element) prepends an element to an array
     newFruit.unshift({ key: secondPassed, value: 'avocado' });
-    this.setState(
-      () => ({
-        seconds: secondPassed,
-        fruits: newFruit
-      }));
+    this.setState(() => ({
+      seconds: secondPassed,
+      fruits: newFruit
+    }));
   }
 
   componentDidMount() {
@@ -39,30 +36,6 @@ class App extends Component {
       <div className="container">
         <FruitList fruits={this.state.fruits} />
       </div>
-    );
-  }
-}
-
-class FruitList extends React.Component {
-  render() {
-    return (
-      /*
-      Transition element checks for state changes and renders list updates as animation.
-      Documentation: https://github.com/drcmda/react-spring/blob/master/API-OVERVIEW.md#transitions
-      */
-      <Transition
-        keys={this.props.fruits.map((fruit) => fruit.key)}
-        from={{ opacity: 0, height: 0 }} // starting state of new element
-        enter={{ opacity: 1, height: 30 }} // endstate of new element
-        update={{ opacity: 0.5, height: 20 }}
-        leave={{ opacity: 0, height: 0, pointerEvents: 'none' }}
-      >
-        {this.props.fruits.map((fruit) => (styles) => (
-          <li style={styles}>
-            {fruit.key}:{fruit.value}
-          </li>
-        ))}
-      </Transition>
     );
   }
 }

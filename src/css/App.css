@@ -27,13 +27,16 @@
   to { transform: rotate(360deg); }
 }
 
-/* restore border to dynamically added elements */
-tbody tr td {
+
+tbody tr {
+  /* restore border to dynamically added elements */
   border: 1px solid #222;
+  /* align text in td elements */
+  text-align: center;
 }
 
-/* striped elements for dynamic lists */
 
+/* striped elements for dynamic lists */
 tbody tr:nth-child(odd) {
   background-color: #ccc;
 }
@@ -44,5 +47,5 @@ tbody tr:nth-child(even) {
 
 /* highlight first list element */
 tbody tr:first-child {
-  background-color: #f0f;
+  color: #f0f;
 }
