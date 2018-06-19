@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import '../css/FruitList.css';
 
 // https://github.com/drcmda/react-spring/blob/master/API-OVERVIEW.md

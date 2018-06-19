@@ -1,0 +1,25 @@
+{
+  "id": "$useful_id", // Needed?
+  "timeStamp": "dd.MM.yyyy - hh:mm:ss",
+  "title": "Title", // for Events: "$TypeOfAnnouncement: $typeOfCompetition $gender"
+  "contentType": "$var", // either "eventStartingDateAnnouncement" or "eventResultsAnnouncement" or "textMessage,
+  "content": // if contentType=="eventStartingDateAnnouncement" or contentType=="eventResultsAnnouncement
+  {
+    "athletes": [
+      {
+        "id": "$useful_id", // Profile ID? Needed?
+        "name": "Tina Test",
+        "yearOfBirth": "$yearOfBirth",
+        "startingLane": "Lane X",
+        "result": "$result or null if !hasParticipated",
+        "hasBeatenEURecord": "$yesOrNo",
+        "hasBeatenWorldRecord": "$yesOrNo",
+        "placement": "$number or null if !hasParticipated"
+      },
+      {
+        "anotherAthlete": "..."
+      }
+    ]
+  }
+  // if contentType == "textMessage" then "content": "MessageAsString"
+}

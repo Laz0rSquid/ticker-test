@@ -9,7 +9,10 @@ import FruitList from './FruitList';
 class App extends Component {
   constructor(props) {
     super(props);
-    this.state = { seconds: 0, fruits: [{}] };
+    this.state = {
+      seconds: 0,
+      fruits: [{}]
+    };
   }
 
   tick() {
