@@ -1,0 +1,21 @@
+
+.participant-list table tbody tr td {
+  border-top: none;
+}
+
+.participant td:first-child {
+  color: rgba(255, 0, 0, 0.514);
+  width: 60%;
+}
+
+.participant td:not(:first-child):not(:last-child) {
+  width: 10%
+}
+
+.participant td:last-child {
+  width: 20%;
+}
+
+.participant td span {
+  color: #ccc;
+}

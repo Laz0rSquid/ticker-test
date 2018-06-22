@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
 import '../css/App.css';
-import '../css/index.css';
 import '../css/bootstrap.css';
 import '../css/bootstrap-theme.css';
+import '../css/index.css';
+import '../css/Message.css';
 
 import FruitList from './FruitList';
+import Message from './Message';
 
 class App extends Component {
   constructor(props) {
@@ -36,8 +38,12 @@ class App extends Component {
 
   render() {
     return (
-      <div className="container">
-        <FruitList fruits={this.state.fruits} />
+      <div className="container" style={{maxWidth: 720 + 'px', minWidth: 360 + 'px'}}>
+        <h3>
+          <img src="http://via.placeholder.com/42x42" alt="Logo here" />
+          NAVBAR
+        </h3>
+        <Message />
       </div>
     );
   }
